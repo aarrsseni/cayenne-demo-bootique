@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.apache.cayenne.demo</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.bootique.bom</groupId>
+                <artifactId>bootique-bom</artifactId>
+                <version>0.23</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.bootique</groupId>
+            <artifactId>bootique</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.bootique.jetty</groupId>
+            <artifactId>bootique-jetty</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.bootique.logback</groupId>
+            <artifactId>bootique-logback</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.cayenne</groupId>
+            <artifactId>cayenne-server</artifactId>
+            <version>4.1.M1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cayenne</groupId>
+            <artifactId>cayenne-project-compatibility</artifactId>
+            <version>4.1.M2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cayenne</groupId>
+            <artifactId>cayenne-crypto</artifactId>
+            <version>4.1.M1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cayenne</groupId>
+            <artifactId>cayenne-commitlog</artifactId>
+            <version>4.1.M1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cayenne</groupId>
+            <artifactId>cayenne-jcache</artifactId>
+            <version>4.1.M1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cayenne</groupId>
+            <artifactId>cayenne-cache-invalidation</artifactId>
+            <version>4.1.M1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <scope>compile</scope>
+            <version>10.10.2.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Tell maven to support Java 8 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.cayenne.plugins</groupId>
+                <artifactId>cayenne-modeler-maven-plugin</artifactId>
+                <version>4.1.M2-SNAPSHOT</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

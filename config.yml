@@ -1,0 +1,8 @@
+jetty:
+  context: ''
+  connectors:       # Jetty connector. If none is provided, Bootique creates a single HTTP connector on port 8080
+    - port: 8080
+  servlets:         # override java settings of the servlet named "servlet2"
+    servlet1:
+      urlPatterns:
+        - ''
